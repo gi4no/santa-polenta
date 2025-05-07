@@ -3,6 +3,20 @@
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
+
+	let order = $state({
+		key: '',
+		dir: ''
+	});
+
+	const onClickTh = (key: string) => {
+		if (order.key === key && order.dir === 'asc') {
+			goto('/carta-vini', { replaceState: true });
+		} else {
+			order = { key, dir: order.key === key ? 'asc' : 'desc' };
+			goto(`?order=${order.key}&dir=${order.dir}`, { replaceState: true });
+		}
+	};
 </script>
 
 <section class="container mx-auto">
@@ -10,13 +24,13 @@
 	<table class="w-full">
 		<thead>
 			<tr class="border-b text-left italic">
-				<th>Nome</th>
-				<th onclick={() => goto('?order=cantina&dir=asc', { replaceState: true })}>Cantina</th>
-				<th>Anno</th>
-				<th>Regione</th>
-				<th>Nazione</th>
-				<th>Tipologia</th>
-				<th>Prezzo</th>
+				<th onclick={() => onClickTh('nome')}>Nome</th>
+				<th onclick={() => onClickTh('cantina')}>Cantina</th>
+				<th onclick={() => onClickTh('anno')}>Anno</th>
+				<th onclick={() => onClickTh('regione')}>Regione</th>
+				<th onclick={() => onClickTh('nazione')}>Nazione</th>
+				<th onclick={() => onClickTh('tipologia')}>Tipologia</th>
+				<th onclick={() => onClickTh('prezzo')}>Prezzo</th>
 			</tr>
 		</thead>
 		<tbody>
