@@ -3,8 +3,12 @@ import { cert } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 import serviceAccount from './service-account.json';
 
-firebase.initializeApp({
-	credential: cert(serviceAccount as unknown as string)
-});
+if (import.meta.env.MODE === 'development') {
+	firebase.initializeApp({
+		credential: cert(serviceAccount as unknown as string)
+	});
+} else {
+	firebase.initializeApp();
+}
 
 export const db = getFirestore();
