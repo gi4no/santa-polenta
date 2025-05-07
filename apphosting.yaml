@@ -1,0 +1,3 @@
+env:
+  - variable: ORIGIN
+    value: https://santa-polenta--santa-polenta.europe-west4.hosted.app

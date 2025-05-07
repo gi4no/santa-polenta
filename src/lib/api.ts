@@ -8,14 +8,20 @@ export class Backend {
 	static addWine: (data: Vino) => Promise<number> = async (data) => {
 		const response = await fetch('/admin/api/carta-vini', {
 			method: 'POST',
-			body: JSON.stringify(data)
+			body: JSON.stringify(data),
+			headers: {
+				'content-type': 'application/json'
+			}
 		});
 		return response.status;
 	};
 	static updateWine: (data: Vino) => Promise<number> = async (data) => {
 		const response = await fetch('/admin/api/carta-vini', {
 			method: 'PATCH',
-			body: JSON.stringify(data)
+			body: JSON.stringify(data),
+			headers: {
+				'content-type': 'application/json'
+			}
 		});
 		return response.status;
 	};
