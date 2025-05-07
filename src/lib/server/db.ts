@@ -1,11 +1,10 @@
 import firebase from 'firebase-admin';
 import { cert } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
-import serviceAccount from './service-account.json';
 
 if (import.meta.env.MODE === 'development') {
 	firebase.initializeApp({
-		credential: cert(serviceAccount as unknown as string)
+		credential: cert('config/service-account.json')
 	});
 } else {
 	firebase.initializeApp();
