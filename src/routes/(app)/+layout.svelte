@@ -19,7 +19,7 @@
 </script>
 
 <section
-	class="main-section h-[100dvh] bg-cover bg-position-[0_-360px] bg-no-repeat {page.url.pathname}"
+	class="main-section h-[100vh] bg-cover bg-position-[0_-360px] bg-no-repeat {page.url.pathname}"
 >
 	<Header />
 	{@render children()}
