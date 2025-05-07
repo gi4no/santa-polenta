@@ -44,10 +44,17 @@
 		:global(&.\/carta-vini) {
 			background:
 				linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-				url('/assets/images/santa-polenta-desk.jpg') no-repeat;
+				url('/assets/images/santa-polenta.jpg') no-repeat;
 			background-position: center center;
 			background-size: cover;
 			transition: all 0.4s ease-out;
+		}
+		@variant lg {
+			background:
+				linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+				url('/assets/images/santa-polenta-desk.jpg') no-repeat;
+			background-position: center center;
+			background-size: cover;
 		}
 	}
 </style>
