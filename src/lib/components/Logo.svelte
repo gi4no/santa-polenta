@@ -2,8 +2,9 @@
 	let { isAdmin = false } = $props();
 </script>
 
-<div
+<a
 	class="font-lucky relative border-t-2 border-b-2 border-t-yellow-600 border-b-yellow-500 px-2 py-2"
+	href="/"
 >
 	<h2
 		class="text-5xl leading-none tracking-[2px] text-yellow-500 text-shadow-amber-900 text-shadow-md"
@@ -18,4 +19,4 @@
 			backoffice
 		</span>
 	{/if}
-</div>
+</a>

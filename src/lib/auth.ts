@@ -23,7 +23,6 @@ onAuthStateChanged(auth, (user) => {
 			// https://firebase.google.com/docs/reference/js/auth.user
 			const uid = user.uid;
 			console.log(uid);
-			goto('/admin');
 			logged.set(true);
 			// ...
 		} else {

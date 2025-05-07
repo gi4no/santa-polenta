@@ -6,6 +6,7 @@ export const load = (async ({ url }) => {
 	const { order, dir } = Object.fromEntries(new URLSearchParams(url.searchParams).entries());
 	const snapshot = await db
 		.collection('carta-vini')
+		.where('disabled', '==', false)
 		.orderBy(order || 'nome', (dir as 'asc' | 'desc') || 'asc')
 		.get();
 	const data: Vino[] = [];

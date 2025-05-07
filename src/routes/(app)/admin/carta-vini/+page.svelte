@@ -37,20 +37,20 @@
 	});
 </script>
 
-<h3 class="mb-8 text-3xl">Carta vini</h3>
+<h3 class="font-lucky mb-8 text-3xl">Carta vini</h3>
 
-<div>
-	<table class="w-full">
+<div class="w-full overflow-auto">
+	<table>
 		<thead class="text-left">
 			<tr class="bg-yellow-300">
-				<th class="rounded-tl-xl px-2 py-2">Nome</th>
-				<th class="px-2 py-2">Cantina</th>
-				<th class="px-2 py-2">Annata</th>
-				<th class="px-2 py-2">Regione</th>
-				<th class="px-2 py-2">Nazione</th>
-				<th class="px-2 py-2">Prezzo</th>
-				<th class="px-2 py-2">Tipologia</th>
-				<th class="w-[150px] rounded-tr-xl px-2 py-2">&nbsp;</th>
+				<th class="min-w-[150px] rounded-tl-xl px-2 py-2">Nome</th>
+				<th class="min-w-[150px] px-2 py-2">Cantina</th>
+				<th class="min-w-[150px] px-2 py-2">Annata</th>
+				<th class="min-w-[100px] px-2 py-2">Regione</th>
+				<th class="min-w-[150px] px-2 py-2">Nazione</th>
+				<th class="min-w-[150px] px-2 py-2">Prezzo</th>
+				<th class="min-w-[150px] px-2 py-2">Tipologia</th>
+				<th class="min-w-[150px] rounded-tr-xl px-2 py-2">Azioni</th>
 			</tr>
 		</thead>
 		<tbody>

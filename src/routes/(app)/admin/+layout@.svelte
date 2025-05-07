@@ -3,8 +3,20 @@
 	import { logged } from '$lib/auth';
 	import Header from '$lib/components/Header.svelte';
 	import { onMount } from 'svelte';
+	import { twMerge } from 'tailwind-merge';
 
 	let { children } = $props();
+
+	let open = $state(false);
+	let innerWidth = $state();
+
+	$effect(() => {
+		if (innerWidth > 1024) {
+			open = true;
+		} else {
+			open = false;
+		}
+	});
 
 	onMount(async () => {
 		if (browser) {
@@ -13,10 +25,26 @@
 	});
 </script>
 
+<svelte:window bind:innerWidth />
+
 {#if $logged}
 	<section class="h-[100dvh] bg-yellow-50">
-		<nav class="fixed top-0 h-[100dvh] w-[300px] bg-yellow-100">
-			<Header isAdmin />
+		<button
+			onclick={() => (open = !open)}
+			class="absolute top-4 left-4 z-20 block text-2xl lg:hidden"
+		>
+			{#if open}
+				❌
+			{:else}
+				🚀
+			{/if}
+		</button>
+		<nav
+			class={twMerge(
+				'fixed top-0 z-10 h-[100dvh] w-[300px] -translate-x-full bg-yellow-100 py-8 shadow-2xl font-lucky text-gray-800',
+				open && 'translate-x-0 transition-transform'
+			)}
+		>
 			<ul class="my-8 px-4">
 				<li class="text-xl">
 					<a href="/admin/menu">Menu</a>
@@ -26,8 +54,11 @@
 				</li>
 			</ul>
 		</nav>
-		<section class="ml-[300px] w-[calc(100%-300px)] px-8 py-8">
-			{@render children()}
+		<section class="lg:ml-[300px] lg:w-[calc(100%-300px)]">
+			<Header isAdmin />
+			<main class="px-8 py-8">
+				{@render children()}
+			</main>
 		</section>
 	</section>
 {/if}

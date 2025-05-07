@@ -6,7 +6,7 @@
 	this={href ? 'a' : 'button'}
 	{href}
   {type}
-	class="min-w-[300px] rounded-sm border-2 bg-yellow-600 px-4 py-2 text-center text-xl transition-all duration-400 hover:text-yellow-900 cursor-pointer"
+	class="min-w-[300px] rounded-sm border-2 bg-yellow-700/80 px-4 py-2 text-center text-xl transition-all duration-400 hover:text-yellow-600 hover:bg-yellow-800 cursor-pointer hover:border-black"
 >
 	{label}
 </svelte:element>

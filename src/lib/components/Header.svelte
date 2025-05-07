@@ -5,7 +5,5 @@
 </script>
 
 <header class="flex items-center justify-center py-4">
-	<a href="/">
-		<Logo {isAdmin} />
-	</a>
+	<Logo {isAdmin} />
 </header>
