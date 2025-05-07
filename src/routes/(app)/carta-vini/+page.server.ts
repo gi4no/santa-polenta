@@ -4,7 +4,6 @@ import type { PageServerLoad } from './$types';
 
 export const load = (async ({ url }) => {
 	const { order, dir } = Object.fromEntries(new URLSearchParams(url.searchParams).entries());
-	console.log(order, dir);
 	const snapshot = await db
 		.collection('carta-vini')
 		.orderBy(order || 'nome', (dir as 'asc' | 'desc') || 'asc')

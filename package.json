@@ -37,6 +37,7 @@
 		"@vituum/vite-plugin-postcss": "1.1.0"
 	},
 	"dependencies": {
-		"firebase-admin": "^13.3.0"
+		"firebase-admin": "^13.3.0",
+		"firebase": "11.6.1"
 	}
 }

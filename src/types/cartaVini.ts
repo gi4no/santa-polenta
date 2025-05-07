@@ -6,6 +6,6 @@ export type Vino = {
 	regione: string;
 	nazione: string;
 	disabled: boolean;
-	tipolgia: string;
+	tipologia: string;
 	prezzo: number;
 };

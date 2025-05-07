@@ -115,7 +115,7 @@
 						<input
 							class="w-full px-2 py-2"
 							type="text"
-							bind:value={wine.tipolgia}
+							bind:value={wine.tipologia}
 							{disabled}
 							required
 						/>
@@ -153,7 +153,7 @@
 					nome: '',
 					prezzo: 0,
 					regione: '',
-					tipolgia: ''
+					tipologia: ''
 				}
 			];
 		}}>Aggiungi +</button
