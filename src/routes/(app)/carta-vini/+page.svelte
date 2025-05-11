@@ -34,7 +34,7 @@
 	};
 </script>
 
-<section class="container mx-auto">
+<section class="container mx-auto pb-[200px]">
 	<h2 class="font-lucky mb-8 text-xl tracking-widest text-yellow-700">Carta dei vini</h2>
 	<div class="hidden lg:block print:block">
 		<table class="w-full">
