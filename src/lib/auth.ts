@@ -1,10 +1,11 @@
 import { browser } from '$app/environment';
 import { goto } from '$app/navigation';
+import { page } from '$app/state';
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { writable } from 'svelte/store';
 
-const logged = writable<boolean>(false);
+const logged = writable<boolean | undefined>();
 const firebaseConfig = {
 	apiKey: 'AIzaSyAccQ-eF2IqKqy7731Z_7M5nrtvycFS1WU',
 	authDomain: 'santa-polenta.firebaseapp.com',
@@ -21,10 +22,11 @@ onAuthStateChanged(auth, (user) => {
 		if (user) {
 			// User is signed in, see docs for a list of available properties
 			// https://firebase.google.com/docs/reference/js/auth.user
-			const uid = user.uid;
-			console.log(uid);
+			// const uid = user.uid;
+			if (page.route.id === '/(app)/admin/login') {
+				goto('/admin/carta');
+			}
 			logged.set(true);
-			// ...
 		} else {
 			goto('/admin/login');
 			logged.set(false);

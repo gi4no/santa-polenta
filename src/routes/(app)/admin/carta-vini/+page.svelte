@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Backend } from '$lib/api';
-	import Button from '$lib/components/Button.svelte';
 	import type { Vino } from '$types/cartaVini';
 	import { onMount } from 'svelte';
 
@@ -50,7 +49,7 @@
 				<th class="min-w-[150px] px-2 py-2">Nazione</th>
 				<th class="min-w-[150px] px-2 py-2">Prezzo</th>
 				<th class="min-w-[150px] px-2 py-2">Tipologia</th>
-				<th class="min-w-[150px] rounded-tr-xl px-2 py-2">Azioni</th>
+				<th class="sticky right-0 min-w-[100px] rounded-tr-xl bg-yellow-300 px-2 py-2">Azioni</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -120,11 +119,15 @@
 							required
 						/>
 					</td>
-					<td class="text-center">
-						<button class="cursor-pointer px-2" onclick={() => (edit = [...edit, wine.id])}>
-							✏️
-						</button>
-						<button class="cursor-pointer px-2" onclick={() => onEdit(wine)}> ✅ </button>
+					<td class="sticky right-0 bg-yellow-50 text-center">
+						<span class="absolute top-0 left-0 h-full w-[1px] bg-black"></span>
+						{#if !disabled}
+							<button class="cursor-pointer px-2" onclick={() => onEdit(wine)}> ✅ </button>
+						{:else}
+							<button class="cursor-pointer px-2" onclick={() => (edit = [...edit, wine.id])}>
+								✏️
+							</button>
+						{/if}
 						<button class="cursor-pointer px-2" onclick={() => toggleWine(wine)}>
 							{#if wine.disabled}
 								↩️

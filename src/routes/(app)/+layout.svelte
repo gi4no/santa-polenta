@@ -19,7 +19,7 @@
 </script>
 
 <section
-	class="main-section h-[100vh] bg-cover bg-position-[0_-360px] bg-no-repeat {page.url.pathname}"
+	class="main-section min-h-[100vh] bg-cover bg-position-[0_-360px] bg-no-repeat bg-fixed {page.url.pathname} relative"
 >
 	<Header />
 	{@render children()}
@@ -41,7 +41,7 @@
 			background-position: center center;
 			background-size: cover;
 		}
-		:global(&.\/carta-vini) {
+		:global(&.\/carta-vini), :global(&.\/carta\/pranzo), :global(&.\/carta\/cena) {
 			background:
 				linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
 				url('/assets/images/santa-polenta.png') no-repeat;
@@ -55,6 +55,9 @@
 				background-position: center center;
 				background-size: cover;
 			}
+      :global(footer a) {
+        color: black;
+      }
 		}
 	}
 </style>

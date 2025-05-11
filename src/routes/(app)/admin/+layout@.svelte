@@ -28,7 +28,7 @@
 <svelte:window bind:innerWidth />
 
 {#if $logged}
-	<section class="h-[100dvh] bg-yellow-50">
+	<section class="min-h-[100vh] bg-yellow-50">
 		<button
 			onclick={() => (open = !open)}
 			class="absolute top-4 left-4 z-20 block text-2xl lg:hidden"
@@ -47,7 +47,7 @@
 		>
 			<ul class="my-8 px-4">
 				<li class="text-xl">
-					<a href="/admin/menu">Menu</a>
+					<a href="/admin/carta">Carta</a>
 				</li>
 				<li class="text-xl">
 					<a href="/admin/carta-vini">Carta vini</a>
@@ -56,7 +56,7 @@
 		</nav>
 		<section class="lg:ml-[300px] lg:w-[calc(100%-300px)]">
 			<Header isAdmin />
-			<main class="px-8 py-8">
+			<main class="px-2 lg:px-4 py-8">
 				{@render children()}
 			</main>
 		</section>

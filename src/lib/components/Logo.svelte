@@ -3,7 +3,7 @@
 </script>
 
 <a
-	class="font-lucky relative border-t-2 border-b-2 border-t-yellow-600 border-b-yellow-500 px-2 py-2"
+	class="block font-lucky relative border-t-2 border-b-2 border-t-yellow-600 border-b-yellow-500 px-2 py-2"
 	href="/"
 >
 	<h2

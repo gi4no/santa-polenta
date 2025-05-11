@@ -36,10 +36,10 @@
 
 <section class="container mx-auto">
 	<h2 class="font-lucky mb-8 text-xl tracking-widest text-yellow-700">Carta dei vini</h2>
-	<div class="hidden lg:block">
+	<div class="hidden lg:block print:block">
 		<table class="w-full">
 			<thead>
-				<tr class="font-lucky border-b text-left tracking-widest text-yellow-700 italic">
+				<tr class="font-lucky border-b text-left tracking-widest text-yellow-700 italic print:text-sm">
 					<th class="cursor-pointer" onclick={() => onClickTh('nome')}>
 						Nome <span class="print:hidden">↕️</span>
 					</th>
@@ -65,7 +65,7 @@
 			</thead>
 			<tbody>
 				{#each data.wines as wine}
-					<tr class="border-b">
+					<tr class="border-b print:text-sm">
 						<td>{wine.nome}</td>
 						<td>{wine.cantina}</td>
 						<td>{wine.anno}</td>
@@ -78,7 +78,7 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="lg:hidden">
+	<div class="lg:hidden print:hidden">
 		<div class="flex justify-between">
 			<select name="order" id="" bind:value={order.key} onchange={onChangeSelect}>
 				<option value="">Ordina per</option>
