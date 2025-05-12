@@ -1,11 +1,13 @@
 export type Vino = {
 	id: string;
-	nome: string;
-	cantina: string;
-	anno: number;
-	regione: string;
-	nazione: string;
+	name: string;
+	producer: string;
+	years: number;
+	region: string;
+	nation: string;
 	disabled: boolean;
-	tipologia: string;
-	prezzo: number;
+	type: string;
+	price: number;
+	alcohol: string;
+	grape: string;
 };

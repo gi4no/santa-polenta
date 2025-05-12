@@ -60,7 +60,7 @@
 						<input
 							class="w-full px-2 py-2"
 							type="text"
-							bind:value={wine.nome}
+							bind:value={wine.name}
 							{disabled}
 							required
 						/>
@@ -69,7 +69,7 @@
 						<input
 							class="w-full px-2 py-2"
 							type="text"
-							bind:value={wine.cantina}
+							bind:value={wine.producer}
 							{disabled}
 							required
 						/>
@@ -78,7 +78,7 @@
 						<input
 							class="w-full px-2 py-2"
 							type="text"
-							bind:value={wine.anno}
+							bind:value={wine.years}
 							{disabled}
 							required
 						/>
@@ -87,7 +87,7 @@
 						<input
 							class="w-full px-2 py-2"
 							type="text"
-							bind:value={wine.regione}
+							bind:value={wine.region}
 							{disabled}
 							required
 						/>
@@ -96,7 +96,7 @@
 						<input
 							class="w-full px-2 py-2"
 							type="text"
-							bind:value={wine.nazione}
+							bind:value={wine.nation}
 							{disabled}
 							required
 						/>
@@ -105,7 +105,7 @@
 						<input
 							class="w-full px-2 py-2"
 							type="text"
-							bind:value={wine.prezzo}
+							bind:value={wine.price}
 							{disabled}
 							required
 						/>
@@ -114,7 +114,7 @@
 						<input
 							class="w-full px-2 py-2"
 							type="text"
-							bind:value={wine.tipologia}
+							bind:value={wine.type}
 							{disabled}
 							required
 						/>
@@ -149,14 +149,16 @@
 				...wines,
 				{
 					id,
-					anno: 0,
-					cantina: '',
+					years: 0,
+					producer: '',
 					disabled: false,
-					nazione: '',
-					nome: '',
-					prezzo: 0,
-					regione: '',
-					tipologia: ''
+					nation: '',
+					name: '',
+					price: 0,
+					region: '',
+					type: '',
+					grape: '',
+					alcohol: ''
 				}
 			];
 		}}>Aggiungi +</button

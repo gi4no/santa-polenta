@@ -38,17 +38,14 @@
 
 	const fetchPlate = async () => {
 		plates = await Backend.getPlate();
-		console.log($state.snapshot(plates));
 	};
 
 	const fetchMenu = async () => {
 		menus = await Backend.getMenu();
-		console.log($state.snapshot(plates));
 	};
 
 	const fetchMenuAssignment = async () => {
 		menusAssignment = await Backend.getMenuAssignment();
-		console.log($state.snapshot(plates));
 	};
 
 	onMount(() => {
@@ -142,7 +139,7 @@
 			name="pranzo"
 			id="pranzo"
 			class="rounded-sm border px-2 py-2"
-      value={menusAssignment.pranzo}
+			value={menusAssignment.pranzo}
 			onchange={(e) => {
 				onEditMenuAssignment(e.currentTarget.value, 'pranzo');
 			}}
@@ -158,7 +155,7 @@
 			name="cena"
 			id="cena"
 			class="rounded-sm border px-2 py-2"
-      value={menusAssignment.cena}
+			value={menusAssignment.cena}
 			onchange={(e) => {
 				onEditMenuAssignment(e.currentTarget.value, 'cena');
 			}}

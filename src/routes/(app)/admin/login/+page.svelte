@@ -22,8 +22,6 @@
 				console.log(errorCode, errorMessage);
 			});
 	};
-
-	onMount(() => {});
 </script>
 
 {#if $logged !== undefined}
