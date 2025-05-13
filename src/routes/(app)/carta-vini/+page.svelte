@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import CardWine from '$lib/components/CardWine.svelte';
 	import TableFront from '$lib/components/TableFront.svelte';
-	import type { Vino } from '$types/cartaVini';
+	import groupBy from 'object.groupby';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -12,10 +11,10 @@
 		dir: ''
 	});
 
-	const groupByType = Object.groupBy(data.wines, (el) => el.type);
+	const groupByType = groupBy(data.wines, (el) => el.type);
 	const groupByRegion = Object.fromEntries(
 		Object.entries(groupByType).map(([key, value]) => {
-			return [key, Object.groupBy(value || [], (el) => el.region)];
+			return [key, groupBy(value || [], (el) => el.region)];
 		})
 	);
 
