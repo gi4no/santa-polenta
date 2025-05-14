@@ -212,8 +212,8 @@
 								>
 									❌
 								</button>
-								{plates.find((el) => el.id === antipasto)?.nome}
 							{/if}
+							{plates.find((el) => el.id === antipasto)?.nome}
 						</div>
 					{/each}
 				</div>
