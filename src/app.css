@@ -2,7 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-	--font-sans: 'Roboto';
+	--font-sans: 'Open Sans';
 	--font-lucky: 'Luckiest Guy', cursive;
 }
 

@@ -46,7 +46,8 @@
 		}
 		:global(&.\/carta-vini),
 		:global(&.\/carta\/pranzo),
-		:global(&.\/carta\/cena) {
+		:global(&.\/carta\/cena),
+		:global(&.\/lista-allergeni) {
 			background:
 				linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
 				url('/assets/images/santa-polenta.png') no-repeat;

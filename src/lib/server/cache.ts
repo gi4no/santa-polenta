@@ -1,3 +1,3 @@
 import NodeCache from 'node-cache';
 
-export const wineCache = new NodeCache();
+export const Cache = new NodeCache();

@@ -1,4 +1,4 @@
-import { wineCache } from '$lib/server/cache';
+import { Cache } from '$lib/server/cache';
 import { db } from '$lib/server/db';
 import type { Vino } from '$types/cartaVini';
 import type { PageServerLoad } from './$types';
@@ -8,15 +8,15 @@ export const load = (async ({ url }) => {
 		new URLSearchParams(url.searchParams).entries()
 	);
 
-	const cacheWine = wineCache.get<{ wines: Vino[] }>('wines');
+	const cacheWine = Cache.get<{ wines: Vino[] }>('wines');
 
 	if (cacheWine?.wines?.length && cacheWine?.wines?.length > 0) {
-		console.log('from cache');
+		console.log('wines from cache');
 		return {
 			wines: cacheWine.wines
 		};
 	} else {
-		console.log('from db');
+		console.log('wines from db');
 		const snapshot = await db
 			.collection('wines')
 			.where('disabled', '==', false)
@@ -24,7 +24,7 @@ export const load = (async ({ url }) => {
 			.get();
 		const data: Vino[] = [];
 		snapshot.forEach((doc) => data.push({ id: doc.id, ...doc.data() } as Vino));
-		wineCache.set('wines', { wines: data }, 0);
+		Cache.set('wines', { wines: data }, 0);
 		return { wines: data };
 	}
 }) satisfies PageServerLoad;
