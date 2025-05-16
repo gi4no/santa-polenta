@@ -3,6 +3,9 @@
 	import TableFront from '$lib/components/TableFront.svelte';
 	import groupBy from 'object.groupby';
 	import type { PageData } from './$types';
+	import { onMount } from 'svelte';
+	import ChevronUp from '$lib/components/ChevronUp.svelte';
+	import { fade } from 'svelte/transition';
 
 	let { data }: { data: PageData } = $props();
 
@@ -10,6 +13,8 @@
 		key: '',
 		dir: ''
 	});
+	let isMobile: boolean | undefined = $state();
+	let scrollY: number = $state(0);
 
 	const groupByType = groupBy(data.wines, (el) => el.type);
 	const groupByRegion = Object.fromEntries(
@@ -48,14 +53,26 @@
 	// 		goto(`?order=${order.key}&dir=${order.dir}`, { replaceState: true });
 	// 	}
 	// };
+
+	onMount(() => {
+		isMobile = window.matchMedia('(width < 64rem)').matches;
+	});
 </script>
+
+<svelte:window bind:scrollY />
 
 <section class="container mx-auto pb-[200px]">
 	<h2 class="font-lucky mb-8 text-xl tracking-widest text-yellow-700">Carta dei vini</h2>
+	<div class="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2">
+		<p class="min-w-full lg:min-w-auto">Vai a:</p>
+		<a class="border px-2 py-1" href="#bianco{isMobile ? '-mobile' : ''}">Bianco</a>
+		<a class="border px-2 py-1" href="#bollicina{isMobile ? '-mobile' : ''}">Bollicina</a>
+		<a class="border px-2 py-1" href="#rosso{isMobile ? '-mobile' : ''}">Rosso</a>
+	</div>
 	<div class="hidden lg:block print:block">
 		{#each Object.entries(groupByRegionSort) as [type, regions]}
 			<div class="pb-12">
-				<h2 class="mb-2 text-4xl font-bold">{type}</h2>
+				<h2 class="mb-2 scroll-mt-4 text-4xl font-bold" id={type.toLocaleLowerCase()}>{type}</h2>
 				{#each Object.entries(regions) as [region, wines]}
 					<div class="mb-8">
 						<h3 class="mb-2 text-2xl font-semibold italic">{region}</h3>
@@ -80,15 +97,31 @@
 			</select>
 		</div> -->
 		{#each Object.entries(groupByRegionSort) as [type, regions]}
-			<h2 class="mb-2 text-4xl font-bold tracking-[3px]">{type}</h2>
-			{#each Object.entries(regions) as [region, wines]}
-				<div class="mb-4">
-					<h3 class="mb-2 text-2xl font-semibold italic">{region}</h3>
-					{#each wines || [] as wine}
-						<CardWine {wine} />
-					{/each}
-				</div>
-			{/each}
+			<div>
+				<h2
+					class="mb-2 scroll-mt-4 text-4xl font-bold tracking-[3px]"
+					id="{type.toLocaleLowerCase()}-mobile"
+				>
+					{type}
+				</h2>
+				{#each Object.entries(regions) as [region, wines]}
+					<div class="mb-4">
+						<h3 class="mb-2 text-2xl font-semibold italic">{region}</h3>
+						{#each wines || [] as wine}
+							<CardWine {wine} />
+						{/each}
+					</div>
+				{/each}
+			</div>
 		{/each}
 	</div>
+	{#if scrollY > 100}
+		<button
+			transition:fade
+			onclick={() => window.scrollTo(0, 0)}
+			class="fixed right-4 bottom-4 rounded-lg bg-white px-3 py-3 shadow-md cursor-pointer"
+		>
+			<ChevronUp />
+		</button>
+	{/if}
 </section>
