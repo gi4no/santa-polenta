@@ -55,8 +55,8 @@
 	});
 </script>
 
-<h3 class="font-lucky mb-4 text-3xl">Carta</h3>
-<h4 class="font-lucky mb-8 text-xl">Piatti</h4>
+<h3 class="font-kaikoura mb-4 text-3xl">Carta</h3>
+<h4 class="font-kaikoura mb-8 text-xl">Piatti</h4>
 
 <div class="mb-8 w-full overflow-auto">
 	<table class="w-full">
@@ -130,8 +130,8 @@
 	>
 </div>
 
-<h4 class="font-lucky mb-4 text-xl">Menu</h4>
-<h5 class="font-lucky">Assegna menu:</h5>
+<h4 class="font-kaikoura mb-4 text-xl">Menu</h4>
+<h5 class="font-kaikoura">Assegna menu:</h5>
 <div class="mb-4 flex">
 	<div class="min-w-[200px]">
 		<p class="italic">Pranzo</p>
@@ -167,7 +167,7 @@
 	</div>
 </div>
 
-<h5 class="font-lucky">Modifica/Aggiungi menu:</h5>
+<h5 class="font-kaikoura">Modifica/Aggiungi menu:</h5>
 <div class="mb-4 grid grid-cols-1 items-start gap-8">
 	{#each menus as menu}
 		{@const disabled = !editMenu.includes(menu.id)}

@@ -36,7 +36,7 @@
 	});
 </script>
 
-<h3 class="font-lucky mb-8 text-3xl">Carta vini</h3>
+<h3 class="font-kaikoura mb-8 text-3xl">Carta vini</h3>
 
 <div class="w-full overflow-auto">
 	<table>

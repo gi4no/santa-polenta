@@ -6,7 +6,7 @@
 
 <table class="w-full table-fixed">
 	<thead>
-		<tr class="font-lucky border-b text-left tracking-widest text-yellow-700 italic print:text-sm">
+		<tr class="font-kaikoura uppercase border-b text-left tracking-widest text-yellow-700 italic print:text-sm">
 			<th class="w-[200px]">Nome</th>
 			<th>Cantina</th>
 			<th class="w-[100px]">Anno</th>

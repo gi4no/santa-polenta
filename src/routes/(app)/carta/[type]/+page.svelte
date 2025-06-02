@@ -14,7 +14,7 @@
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <section class="container mx-auto pb-[200px]">
-	<h2 class="font-lucky mb-8 text-center text-xl tracking-widest text-yellow-700">
+	<h2 class="font-kaikoura mb-8 text-center text-xl tracking-widest text-yellow-700">
 		Menu {page.params.type}
 	</h2>
 	<div class="text-center">

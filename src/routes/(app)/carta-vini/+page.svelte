@@ -62,7 +62,7 @@
 <svelte:window bind:scrollY />
 
 <section class="container mx-auto pb-[200px]">
-	<h2 class="font-lucky mb-8 text-xl tracking-widest text-yellow-700">Carta dei vini</h2>
+	<h2 class="font-kaikoura mb-8 text-xl uppercase tracking-widest text-yellow-700">Carta dei vini</h2>
 	<div class="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2">
 		<p class="min-w-full lg:min-w-auto">Vai a:</p>
 		<a class="border px-2 py-1" href="#bianco{isMobile ? '-mobile' : ''}">Bianco</a>

@@ -2,11 +2,9 @@
 	let { isAdmin = false } = $props();
 </script>
 
-<a
-	class="block font-lucky relative border-t-2 border-b-2 border-t-yellow-600 border-b-yellow-500 px-2 py-2"
-	href="/"
->
-	<h2
+<a class="relative block w-[350px] px-2 py-2" href="/">
+	<img src="/assets/logo/logo.png" alt="logo" />
+	<!-- <h2
 		class="text-5xl leading-none tracking-[2px] text-yellow-500 text-shadow-amber-900 text-shadow-md"
 	>
 		Santa
@@ -18,5 +16,5 @@
 		<span class="absolute bottom-0 w-full translate-y-full py-1 text-center text-yellow-900">
 			backoffice
 		</span>
-	{/if}
+	{/if} -->
 </a>

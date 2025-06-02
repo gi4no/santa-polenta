@@ -41,7 +41,7 @@
 		</button>
 		<nav
 			class={twMerge(
-				'fixed top-0 z-10 h-[100dvh] w-[300px] -translate-x-full bg-yellow-100 py-8 shadow-2xl font-lucky text-gray-800',
+				'fixed top-0 z-10 h-[100dvh] w-[300px] -translate-x-full bg-yellow-100 py-8 shadow-2xl font-kaikoura text-gray-800',
 				open && 'translate-x-0 transition-transform'
 			)}
 		>
